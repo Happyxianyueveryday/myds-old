@@ -9,7 +9,7 @@
 ### 目录（随时间更新）
 #### 1. Linked-list: 单向链表
 #### 2. Louble-list: 双向链表
-#### 3. Ring_list: 环链表
+#### 3. Ring-list: 环链表
 #### 4. Tree: 二叉搜索树
 #### 5. Stack: 栈
 #### 6. Queue: 队列
