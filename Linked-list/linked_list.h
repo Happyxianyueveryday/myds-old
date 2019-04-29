@@ -133,6 +133,8 @@ List & List::operator = (const List &other)
     }
 
     size=other.size;           // 初始化完成后，当前链表长度和源链表长度相等
+    
+    return (*this);
 }
 
 
