@@ -272,7 +272,7 @@ List::~List()
     {
         ListNode *temp=now;
         now=now->next;
-        delete temp;    // 这个地方的错误找了10分钟！小心和谨慎！不能删除now，只能删除临时变量temp 
+        delete temp;    
     }
 }
 
