@@ -69,4 +69,58 @@ vector<int> Graph::dfs(int start)
   
   图的广度优先遍历算法(bfs)的基本步骤如下:
   > 1. 
+  
+  
+  具体的代码实现示例如下，其中data为原图的邻接矩阵，邻接矩阵中的-1表示两点间不相邻。
+  
+  ```
+  /*
+ * bfs: 图的广度优先搜索
+ * param start: 广度优先搜索的起始结点下标
+ * note: 图的广度优先搜索和树的层次遍历使用的迭代算法类似，都是使用队列来辅助完成
+*/
+vector<int> Graph::bfs(int start)
+{
+    vector<int> res;    
+    // 0. 处理特殊情况
+    if(!size||start<0||start>=size)
+    return res;
+
+    // 1. 创建用于广度优先搜索的队列，并且将开始的结点放入队列，并且创建一个数组用于标记对应下标的结点是否已经访问过
+    queue<int> que;      // 用于广度优先搜索的队列
+    bool visit[size];    // 用于记录对应结点是否已经被访问过的数组
+    memset(visit, 0, size*sizeof(bool));
+    que.push(start);
+
+    // 2. 循环进行如下的操作直到队列为空停止: 从队列中出队一个结点，若该结点未访问过，则输出该出队的结点并标记该结点已经访问过，然后将与该结点直接相连接的未访问过的邻居结点全部入队
+    // 附注: 图的广度优先搜索和树的类似，但是需要特别注意，需要标记图中的每个结点是否已经访问过
+    // 附注: 一定要注意使用两次访问检查，在输出前检查要输出的结点是否已经访问过，在结点入栈前检查要入队的结点是否已经访问过 
+    while(que.size())
+    {
+        int temp=que.front();
+        que.pop();
+        
+        // 2.1 若出队的结点已经访问过，直接忽略即可 
+        if(visit[temp])
+        continue; 
+        
+        // 2.2 若出队的结点没有被访问过，则输出该结点，并将该结点未访问过的邻居入队 
+        else
+        {
+        	res.push_back(temp);
+        	visit[temp]=true;
+
+        	for(int i=0;i<size;i++)
+        	{
+            	if(data[temp][i]!=-1&&!visit[i])
+            	que.push(i);
+        	}
+		}
+    }
+
+    // 3. 返回遍历结果
+    return res;
+}
+  ```
+  
 
