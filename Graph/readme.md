@@ -231,7 +231,7 @@ vector<int> Graph::dijkstra(int start)
   
   其中i为起点，j为终点，m取图中的任意一个结点，data为邻接矩阵。对图中的每一个任意的结点m，根据上述公式计算出data\[i]\[j]，最后取这些值中的最小值，就是最终的i，j结点之间的最短路径的长度。
   
-  上述公式的含义也非常朴素：从结点i到结点j，假设存在另外一个结点m，既可以考虑先从结点i直接到结点j，也可以考虑经过结点m，取两种方案下的较小值即可。
+  上述公式的含义也非常朴素：从结点i到结点j，假设存在其他的多个结点(记为结点m)可供选择，只需要依次判断各个结点m是否有必要通过即可，如果通过结点m比当前的方案更好，那就选择通过结点m。（见上述的floyd原理公式）
   
   具体的代码实现示例如下，其中data为原图的邻接矩阵，邻接矩阵中的-1表示两点间不相邻。
   
@@ -257,11 +257,11 @@ vector<int> Graph::floyd(int start)
 		}
 	}
 	
-	for(int i=0;i<size;i++)
-	{
-		for(int j=0;j<size;j++)
+	for(int i=0;i<size;i++)            // 选定起点i
+	{  
+		for(int j=0;j<size;j++)    // 选定终点j
 		{
-			for(int m=0;m<size;m++)
+			for(int m=0;m<size;m++)   // 对上述循环中选定的一对起点和终点(i,j)，依次检查是否有必要通过图中的任意的其他结点m
 			{
 				int temp=(copy[i][m]==INT_MAX||copy[m][j]==INT_MAX)?INT_MAX:(copy[i][m]+copy[m][j]);
 				
