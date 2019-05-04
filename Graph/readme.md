@@ -221,6 +221,61 @@ vector<int> Graph::dijkstra(int start)
   ```
   
   ## 3.2 floyd算法
-  floyd算法相对于dijkstra算法实现起来更为简介，但是时间复杂度较高，为O(n^3)。
+  floyd算法相对于dijkstra算法实现起来更为简洁，但是时间复杂度较高，为O(n^3)。
   
-  floyd算法的核心思想可以用如下的公式进行表示：
+  floyd算法的核心思想是在原来的邻接表的基础上进行迭代和更新，可以用如下的公式进行表示：
+  
+  ```
+  data[i][j]=min(data[i][j], data[i][m]+data[m][j])
+  ```
+  
+  其中i为起点，j为终点，m取图中的任意一个结点，data为邻接矩阵。对图中的每一个任意的结点m，根据上述公式计算出data\[i]\[j]，最后取这些值中的最小值，就是最终的i，j结点之间的最短路径的长度。
+  
+  上述公式的含义也非常朴素：从结点i到结点j，假设存在另外一个结点m，既可以考虑先从结点i直接到结点j，也可以考虑经过结点m，取两种方案下的较小值即可。
+  
+  具体的代码实现示例如下，其中data为原图的邻接矩阵，邻接矩阵中的-1表示两点间不相邻。
+  
+  ```
+  /*
+ * floyd: floyd算法求解结点间最小距离路径 
+ * note: dijkstra和floyd算法都是图中求解最短路径的核心算法，必须熟练掌握其原理 
+*/
+vector<int> Graph::floyd(int start)
+{
+	// floyd算法的总体思想非常简单，其核心公式表述是: data[i][j]=min(data[i][m]+data[m][j], data[i][j])，只需对每一个结点m应用上述公式并一直取最小值，最终即可求得结点i和结点j之间的最短距离 
+	vector<int> res;
+	int copy[size][size];
+	
+	for(int i=0;i<size;i++)
+	{
+		for(int j=0;j<size;j++)
+		{
+			if(data[i][j]==-1)
+			copy[i][j]=INT_MAX;
+			else
+			copy[i][j]=data[i][j];
+		}
+	}
+	
+	for(int i=0;i<size;i++)
+	{
+		for(int j=0;j<size;j++)
+		{
+			for(int m=0;m<size;m++)
+			{
+				int temp=(copy[i][m]==INT_MAX||copy[m][j]==INT_MAX)?INT_MAX:(copy[i][m]+copy[m][j]);
+				
+				if(temp<copy[i][j])
+				copy[i][j]=temp;
+			}
+		}
+	}
+	
+	for(int i=0;i<size;i++)
+	{
+		res.push_back(copy[start][i]);
+	}
+	
+	return res;
+}
+  ```
