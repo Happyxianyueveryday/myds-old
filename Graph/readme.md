@@ -135,6 +135,92 @@ vector<int> Graph::bfs(int start)
   
   dijkstra算法是一种贪心算法，主要实现步骤如下。
   
-  > 1. 创建两个集合S和N，集合S初始时仅包含起点结点start，集合N则包含图中的所有其他结点
-  > 2. 初始化集合N中的每一个结点（记为结点i）到起始结点start的距离dist\[i]，若结点i是结点start的邻居结点，
-
+  > 1. 创建两个集合S和N，集合S初始时仅包含起点结点start，集合N则包含图中的所有其他结点。
+  > 2. 初始化集合N中的每一个结点（记为结点i）通过集合S中的结点到达起点start的距离dist\[i]，若结点i是结点start的邻居结点，则dist\[i]就是结点i和结点start间的距离，否则初始化dist\[i]为无穷大。
+  > 3. 循环进行以下步骤直到集合N为空为止: 
+  >> (1) 从集合N中选取到起始结点start的距离dist最短的结点u  
+  >> (2) 将结点u从集合N中删除，并加入集合S  
+  >> (3) 由于这时多了一个结点u可供经过，因此更新集合N中剩下的各个结点v到起点start的距离dist\[v]，更新公式为: dist\[v]=min(dist\[v], c(v,u)+dist\[u])
+  
+   具体的代码实现示例如下，其中data为原图的邻接矩阵，邻接矩阵中的-1表示两点间不相邻。
+  
+  ```
+  /*
+ * dijkstra: dijkstra算法求解结点间最小距离路径 
+ * note: 因为C++语言中没有良好的内置机制来实现无穷大，因此必须使用很多技巧来保证实现无穷大机制 
+*/
+vector<int> Graph::dijkstra(int start)
+{
+	vector<int> res;
+	
+	// 0. 处理特殊情况和非法输入
+	if(start<0||size==0||start>=size)
+	return res;
+	
+	// 1. 初始化两个集合，用一个bool数组实现，值为true的结点属于集合S，值为false的结点输入集合N，初始化集合S包含结点start，集合N包含所有其他结点
+	bool visit[size];
+	memset(visit, 0, size*sizeof(bool));
+	visit[start]=true;      // 设置起始结点的标记为1，即属于集合S，其他结点属于集合N 
+	
+	// 2. 初始化各个结点到起始结点start的距离，起始结点的邻居结点到start的距离就是直接距离，非邻居结点到start的距离设置为无穷大
+	// 附注: 以下代码中，均使用INT_MAX替换-1表示无穷大距离 
+	int dist[size];
+	for(int i=0;i<size;i++)
+	{
+		if(data[start][i]==-1)
+		dist[i]=INT_MAX;
+		else
+		dist[i]=data[start][i];
+	}
+	
+	// 3. 循环进行以下步骤直到集合N为空: 
+	// (1). 从集合N中选择出到start距离dist[i]最小的结点m
+	// (2). 将该结点m从集合N中删除，加入集合S中
+	// (3). 然后更新集合N中的结点k到起始结点start的距离: dist[k]=min(dist[k], data[k][m]+dist[m])
+	for(int i=0;i<size-1;i++)   // 上述循环只需进行size-1次结束，因为集合N中的结点数目为size-1 
+	{
+		// 3.1 	查找dist中最小的满足visit[m]==false的结点m 
+		int m=-1;
+		int min=INT_MAX;
+		
+		for(int k=0;k<size;k++)
+		{
+			if(visit[k]==false&&dist[k]<=min) 
+			{
+				min=dist[k];
+				m=k;
+			}
+		}
+		
+		// 3.2 将结点m从集合N中删除并加入集合S中
+		visit[m]=true;
+		
+		// 3.3 更新集合N中剩下的结点u到起始点start的距离: dist[u]=min(dist[u], data[u][m]+dist[m])
+		for(int u=0;u<size;u++)
+		{ 
+			if(visit[u]==false)
+			{
+				// 需要特别注意data[u][m]==INT_MAX表示不可达，则这时(data[u][m]+dist[m])的结果仍然是不可达，结果同样为INT_MAX
+				// 特别地，INT_MAX不能参与数值运算，否则会导致溢出 
+				int temp=(data[u][m]==-1)?INT_MAX:(data[u][m]+dist[m]);   // 注意data[u][m]中的无穷大又是用-1表示的，和 
+				
+				if(temp<dist[u]) 
+				dist[u]=temp;
+			}
+		}
+	}
+	
+	// 4. 将dist数组中的值依次装入vector类型的res，返回作为最终结果
+	for(int i=0;i<size;i++) 
+	{
+		res.push_back(dist[i]);
+	}
+	
+	return res;
+}
+  ```
+  
+  ## 3.2 floyd算法
+  floyd算法相对于dijkstra算法实现起来更为简介，但是时间复杂度较高，为O(n^3)。
+  
+  floyd算法的核心思想可以用如下的公式进行表示：
