@@ -13,7 +13,15 @@
 #### 2. Louble-list: 双向链表 
 #### 3. Tree: 二叉搜索树 （5月2日已完成）
 #### 4. Stack: 栈 （5月2日已完成）
-#### 5. Queue: 队列 (预定于5月6日完成)
+#### 5. Queue: 队列 
 #### 6. Graph: 图 (5月4日已完成)
 #### 7. Sort: 排序 (预定于5月5日完成，目前正在更新中)
-#### 8. ThreadedTrees: 线索树（预定于5月7日完成）
+#### 8. Search: 查找
+#### 9. ThreadedTrees: 线索树
+#### 10. BPlusTree: B+树
+#### 11. AVLTree: AVL树
+#### 12. BRTree: 红黑树
+#### 13. Hash: 哈希表
+#### 14. HalfmanTree: 哈夫曼树
+#### 15. StrAlgorithm: 字符串算法(KMP,Manacher等)
+ 
