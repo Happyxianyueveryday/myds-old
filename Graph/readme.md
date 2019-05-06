@@ -291,9 +291,102 @@ vector<int> Graph::floyd(int start)
   > 1. 初始化两个集合S和N，其中集合S包含图中的任一结点v，集合N包含图中的其他结点。
   > 2. 初始化集合N中所含结点u到集合S的距离，集合N中的结点u到集合S的距离dist\[u]定义为结点u到集合S中的各个结点的距离的最小值。
   > 3. 循环进行以下步骤，直到所有结点都已经加入集合S中时停止: 
-  >> (1) 从集合N中选取一个到集合S距离dist\[m]最近的结点m  
-  >> (2) 将结点m从集合N中删除并加入集合S  
+  >> (1) 从集合N中选取一个到集合S距离dist\[m]最近的结点m，假设最近距离的边为m-n，其中n为集合S中的结点
+  >> (2) 将结点m从集合N中删除并加入集合S，并将对应的边m-n加入最小生成树
   >> (3) 由于集合S中新加入了一个结点m，故更新集合N中剩下的各个结点u到集合S的距离，更新公式为: dist\[u]=min(dist\[u], d(u, m))，其中d(u,m)为结点u和结点m之间的距离  
+  
+  prim算法的一个代码实现示例如下所示。
+  
+  ```
+  /*
+ * prim: 生成最小生成树的prim算法 
+ * note: prim算法的核心思路和dijkstra算法非常类似，如下所示:
+ *	     1. 创建两个集合S和N，初始化S包含图中的任意一个结点u，初始化N包含图中的其他结点
+ *	     2. 循环进行以下步骤直到集合为空为止，首先从集合N中选择一个到集合S距离最短的结点u，然后将该结点u和对应的边加入集合中，最后更新集合N中各个结点i到集合S的距离dist[i]，更新公式为: dist[i]=min(dist[i], data[i][u])
+ * 		 附注: 结点u到集合S的最短距离定义为结点u到集合S中各个结点的距离的最小值
+*/
+Graph Graph::prim()
+{	
+	// 0. 处理特殊情况
+	if(!size) 
+	return (*this);
+	
+	// 1. 初始化结果图的邻接表
+	int res[size][size];
+	
+	for(int i=0;i<size;i++)
+	{
+		for(int k=0;k<size;k++)
+		{
+			if(i==k)
+			res[i][k]=0;
+			else
+			res[i][k]=-1;
+		}
+	}
+	
+	// 2. 初始化两个集合S和N，选择结点0放入集合S，其他结点放入集合N
+	bool visit[size]; 
+	memset(visit, 0, size*sizeof(bool));
+	visit[0]=true;
+	
+	// 3. 初始化集合N中各个结点到集合S的最短距离 
+	int dist[size];     // 记录集合N中各个结点到集合S的最短距离 
+	int node[size];     // 记录集合N中各个结点取最短距离的S中的点 
+	
+	for(int i=0;i<size;i++)
+	{
+		if(data[i][0]==-1)
+		{
+			dist[i]=INT_MAX;
+			node[i]=-1;
+		}
+		else
+		{
+			dist[i]=data[i][0];
+			node[i]=0;
+		}
+	}
+	
+	// 4. 循环进行以下步骤直到集合N为空: 从集合N中选择一个到集合S的距离最近的结点u，将结点u从集合N中删除并加入集合S，并将相应的边加入最小生成树，最后，重新更新集合N中的各个结点到集合S的距离，并更新对应的取得最小距离的S中的结点 
+	for(int i=0;i<size-1;i++)
+	{
+		int u, v;
+		int min=INT_MAX;
+		
+		for(int k=0;k<size;k++)    // 从集合N中找出到集合S距离最近的结点 
+		{
+			if(!visit[k]&&dist[k]<=min)
+			{
+				min=dist[k];
+				u=k;
+				v=node[k];
+			}
+		}
+		
+		visit[u]=true;            // 将结点u从集合N中删除并加入集合S 
+		
+		res[u][v]=dist[u];        // 将边u-v加入结果邻接矩阵中
+		res[v][u]=dist[u];        // 注意，还要将边v-u加入结果邻接矩阵中 (实际上就是同一条边) 
+		
+		for(int k=0;k<size;k++)   // 更新集合N中的各个结点k到集合S的距离dist[k]，以及对应的S中的结点node[k]，更新公式为: dist[k]=min(dist[k], data[k][u]), node[k]=(data[k][u]<dist[k])?u:node[k]
+		{
+			int temp=(data[k][u]==-1)?INT_MAX:data[k][u];   // 注意在邻接矩阵中是使用-1来表示无穷大的，与本算法中的规定有所区别 
+			
+			if(temp<dist[k])
+			{
+				dist[k]=temp;
+				node[k]=u;
+			}
+		}
+	}
+	
+	Graph result((const int *)res, size);
+	return result;
+}
+  ```
+  
+  # 4.2 kruskkal算法
   
   
   
