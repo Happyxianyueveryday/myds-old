@@ -284,8 +284,8 @@ vector<int> Graph::floyd(int start)
   
   图的最小生成树问题主要求解算法有两种——prim算法和kruskkal算法。其中prim算法是基于结点进行构造的算法，kruskkal算法是基于边进行构造的算法。
   
-  # 4.1 prim算法
-  prim算法是基于图的结点来进行构造最小生成树的算法，该算法每次选择距离当前所构造的生成树中的结点集合S最小的一个结点加入最小生成树中。
+  ## 4.1 prim算法
+  prim算法是基于图的结点来进行构造最小生成树的算法。简言之，该算法每次选择距离当前所构造的生成树中的结点集合S最小的一个结点加入最小生成树中，并将对应的边也加入最小生成树中。
   
   具体而言， prim算法的具体实现步骤如下：
   > 1. 初始化两个集合S和N，其中集合S包含图中的任一结点v，集合N包含图中的其他结点。
@@ -386,7 +386,122 @@ Graph Graph::prim()
 }
   ```
   
-  # 4.2 kruskkal算法
+  ## 4.2 kruskkal算法
+  kruskkal算法是基于图的边构造最小生成树的算法。简言之，kruskkal算法首先将原图中的各个边从小到大排序，然后依次将边长最小的，加入最小生成树后不会产生环的，尚未加入最小生成树的边加入最小生成树，直到最小生成树中已经含有(n-1)条边(其中n为图的结点数量)时停止。
+  
+  具体而言，kruskkal算法的具体实现步骤如下所示。
+  > 1. 初始化两个集合S和N，集合S为空集，集合N包含原图中的所有的边
+  > 2. 将集合N中的边从小到大排序
+  > 3. 因为集合N是有序的，因此从前向后遍历集合N中的每一条边，并进行以下步骤，直到集合S中含有(n-1)条边时停止(其中n为原图中的结点数量)：
+  >> (1) 若当前边加入集合S后，集合S所表示的最小生成树中不会产生环，就将该边从集合N中删除，并加入集合S  
+  >> (2) 若当前边加入集合S后产生环，则忽略该条边，回到循环步骤处理下一条边(continue语句)  
+  
+  ```
+  /*
+ * kruskkal: 生成最小生成树的kruskkal算法 
+ * note: 在prim算法中核心步骤是: 集合S装有已经构成树的结点，然后将距离集合S最近的结点加入集合S，而kruskkal算法使用了另外一种思想: 在集合S中装构成树的边，每次将最短距离的一条边加入集合S，并且保证加入后集合S中不产生回路 
+ *		 具体而言，kruskkal算法的步骤如下所示: 
+ *       1. 创建两个集合S和N，初始化集合S装有原图中最短的一条边，初始化集合N具有原图中的其他边
+ *       2. 循环进行以下步骤直到集合N为空时停止：从集合N中选出最短的且能保证加入集合S后不会产生环的边，将该边从集合N中删除并加入集合S
+*/
+Graph Graph::kruskkal()
+{
+	// 0. 定义表示图的边的自定义数据结构
+	struct Edge
+	{
+		Edge(int ix, int iy, int ilen):x(ix), y(iy), len(ilen)
+		{
+		}
+		
+		int x;     // 端点1 
+		int y;	   // 端点2 
+		int len;   // 边长 
+	};
+	
+	Graph res(size);   // 创建一个和当前图大小相同的图，该图即为最终的最小生成树 
+	
+	// 1. 初始化所有边的列表
+	vector<Edge> edge;
+	for(int i=0;i<size;i++)
+	{
+		for(int k=0;k<i+1;k++)    // 注意: k<i+1的目的是保证排除重复边，例如u-v和v-u是同一条边，只需要记录其中一个即可 
+		{
+			if(data[i][k]!=-1&&data[i][k]!=0)   // 排除结点自身的边长，排除不存在的边（不存在的边在邻接表中值为-1） 
+			edge.push_back(Edge(i,k,data[i][k]));
+		}
+	}
+	
+	// 2. 按照边长从小到大对列表进行排序 
+	sort(edge.begin(),edge.end(),[](const Edge &a, const Edge &b) -> bool { return a.len<b.len; });
+	
+	// 3. 初始化集合S和集合N，集合S初始情况下仅包含最短的边，集合N包含其他边
+	bool visit[edge.size()];
+	memset(visit, 0, edge.size()*sizeof(bool));
+	
+	visit[0]=true;     // 将最短的边加入集合S，其他的边加入集合N, visit[i]=true表明边edge[i]在集合S中，否则在集合N中 
+	res.data[edge[0].x][edge[0].y]=edge[0].len;       // 将集合S中的边写入结果图中 
+	res.data[edge[0].y][edge[0].x]=edge[0].len; 
+	
+	// 4. 循环进行以下步骤直到集合S加入了(n-1)条边时停止：从集合N中选出最短的且能保证加入集合S后不会产生环的边，将该边从集合N中删除并加入集合S
+	int count=1;      // 集合S所包含的边数
+	
+	for(int i=1;i<edge.size();i++)
+	{
+		if(count==size-1)
+		break;
+		
+		if(!hasloop(res, edge[i].x, edge[i].y, edge[i].len))   // 若将边edge[i]加入集合S中不会导致出现环，则将该边加入集合S 
+		{
+			count+=1;
+			visit[i]=true;   // 将符合不出现环的边从集合N中删除，并加入集合S 
+			
+			res.data[edge[i].x][edge[i].y]=edge[i].len;       // 将新加入集合S的边写入结果图中 
+			res.data[edge[i].y][edge[i].x]=edge[i].len; 
+		}
+	}
+	
+	return res;
+}
+
+/*
+ * hasloop: 判断图中加入一条边后是否产生环 
+ * note: 判断图中是否存在环的方法非常简单，只需要进行深度优先遍历，如果遍历过程中访问了已经访问过的结点，则该图中必定存在环 
+*/
+bool Graph::hasloop(Graph gra, int u, int v, int len)
+{
+	gra.data[u][v]=len;
+	gra.data[v][u]=len;
+	
+	stack<int> sta;
+    bool visit[gra.size];    // 用于记录对应结点是否已经被访问过的数组
+    memset(visit, 0, (gra.size)*sizeof(bool));
+    sta.push(0);
+    
+    while(sta.size())
+    {
+        int temp=sta.top();
+        sta.pop();
+        
+        // 若栈中弹出的结点已经访问过，则说明图中存在环 
+        if(visit[temp])   
+        {
+        	return true;
+		}
+        else
+        {
+        	visit[temp]=true;
+
+        	for(int i=0;i<size;i++)
+        	{
+            	if(gra.data[temp][i]!=-1&&!visit[i])
+            	sta.push(i);
+        	}
+		}
+    }
+    
+    return false;	
+}
+  ```
   
   
   
