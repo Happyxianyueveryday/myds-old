@@ -27,4 +27,9 @@
 #### 13. Hash: 哈希表
 #### 14. HalfmanTree: 哈夫曼树
 #### 15. StrAlgorithm: 字符串算法（KMP,Manacher等）
+
+
+### 一些基本的数据结构的经典应用部分
+该部分统一见Application文件夹下的相关专题。
+#### 16. Application: 数据结构的经典应用
  
