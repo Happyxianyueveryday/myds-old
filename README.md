@@ -17,7 +17,7 @@
 #### 5. Queue: 队列 （预定于5月8日完成）
 #### 6. Graph: 图 （5月4日已完成）
 #### 7. Sort: 排序 （5月7日已完成）
-#### 8. Search: 查找
+#### 8. Search: 查找  
 
 ### 扩展部分
 #### 9. ThreadedTrees: 线索树
@@ -25,11 +25,12 @@
 #### 11. AVLTree: AVL树
 #### 12. BRTree: 红黑树
 #### 13. Hash: 哈希表
-#### 14. HalfmanTree: 哈夫曼树
-#### 15. StrAlgorithm: 字符串算法（KMP,Manacher等）
+#### 14. StrAlgorithm: 字符串算法（KMP,Manacher等）  
 
 
 ### 一些基本的数据结构的经典应用部分
+
 该部分统一见Application文件夹下的相关专题。
+
 #### 16. Application: 数据结构的经典应用
  
