@@ -28,9 +28,9 @@
 #### 14. StrAlgorithm: 字符串算法（KMP,Manacher等）  
 
 
-### 一些基本的数据结构的经典应用部分
+### 据结构相关的leetcode习题精选
 
 该部分统一见Application文件夹下的相关专题。
 
-#### 16. Application: 数据结构的经典应用
+#### 16. Application: 数据结构相关的leetcode习题精选
  
