@@ -1,6 +1,9 @@
 # 数据结构相关的leetcode习题精选
 
-### 目录（随时间长期更新）
+## 目录（随时间长期更新）
+
+## 栈专题
+
 #### 1. PMatches: 用栈进行括号匹配 （5月9日已完成） 
 ```
 leetcode 链接: https://leetcode-cn.com/problems/valid-parentheses/
@@ -32,4 +35,7 @@ leetcode 链接: https://leetcode-cn.com/problems/decode-string/
 ```
 leetcode 链接: https://leetcode-cn.com/problems/simplify-path/
 ```
+
+## 链表专题
+#### 1. 
 
