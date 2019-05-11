@@ -26,12 +26,12 @@ leetcode 链接: https://leetcode-cn.com/problems/implement-queue-using-stacks/
 leetcode 链接: https://leetcode-cn.com/problems/implement-stack-using-queues/
 ```
 
-#### 6. StringDecode: 用栈进行字符串解码（计划于5月11日完成）
+#### 6. StringDecode: 用栈进行字符串解码 （5月11日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/decode-string/
 ```
 
-#### 7. SimplifyPath: 用栈简化路径（计划于5月11日完成）
+#### 7. SimplifyPath: 用栈简化路径（5月11日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/simplify-path/
 ```
