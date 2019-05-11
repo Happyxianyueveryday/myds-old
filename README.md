@@ -17,10 +17,10 @@
 #### 5. Queue: 队列 （5月10日已完成）
 #### 6. Graph: 图 （5月4日已完成，readme文档也已完成）
 #### 7. Sort: 排序 （5月7日已完成，正在更新readme文档）
-#### 8. Search: 查找 （预定于5月11日完成）
+#### 8. Search: 查找 （5月11日已完成）
 
 ### 扩展部分
-#### 9. ThreadedTrees: 线索树
+#### 9. ThreadedTrees: 线索树（预定于5月12日完成）
 #### 10. BPlusTree: B+树
 #### 11. AVLTree: AVL树
 #### 12. BRTree: 红黑树
