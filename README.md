@@ -20,17 +20,20 @@
 #### 8. Search: 查找 （5月11日已完成）
 
 ### 扩展部分
-#### 9. ThreadedTrees: 线索树（预定于5月12日完成）
-#### 10. BPlusTree: B+树
-#### 11. AVLTree: AVL树
-#### 12. BRTree: 红黑树
-#### 13. Hash: 哈希表
-#### 14. StrAlgorithm: 字符串算法（KMP,Manacher等）  
+#### 1. ThreadedTrees: 线索树（预定于5月12日完成）
+#### 2. BPlusTree: B+树
+#### 3. AVLTree: AVL树
+#### 4. BRTree: 红黑树
+#### 5. Hash: 哈希表
+#### 6. StrAlgorithm: 字符串算法（KMP,Manacher等）  
 
 
-### 据结构相关的leetcode习题精选
+### 数据结构leetcode习题精选
 
 该部分统一见Application文件夹下的相关专题。
+#### 1. Application: 数据结构相关的leetcode习题精选
 
-#### 16. Application: 数据结构相关的leetcode习题精选
+### 附件：Java版本实现
+该部分在5月15日后进行二轮复习，重新使用java重写数据结构。
+#### 1. Java: 数据结构的Java实现版本
  
