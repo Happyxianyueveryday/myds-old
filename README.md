@@ -20,7 +20,7 @@
 #### 8. Search: 查找 （5月11日已完成）
 
 ### 扩展部分
-#### 1. ThreadTrees: 线索树（5月15日已完成，预定于5月16日更新readme文档）
+#### 1. ThreadTrees: 线索树（5月15日已完成，readme文档也已完成）
 #### 2. BPlusTree: B+树 （预定于5月16日完成）
 #### 3. AVLTree: AVL树
 #### 4. BRTree: 红黑树
