@@ -118,7 +118,7 @@ ThreadNode *ThreadTree::__copyTree(TreeNode *root)
 ## 3. 线索树的四种基本操作——getFirstNode, getNextNode, getLastNode, getPrevNode
 ### 3.1. 获取中序遍历首结点——getFirstNode操作
 
-getFirstNode操作是线索树两种基本操作之一，getFirstNode操作的功能是：
+getFirstNode操作是线索树四种基本操作之一，getFirstNode操作的功能是：
 
 + 输入一个线索树的根结点，返回该线索树的中序遍历的首结点
 
@@ -154,7 +154,7 @@ ThreadNode *ThreadTree::getFirstNode(ThreadNode *root)
 
 ### 3.2 获取中序遍历后继结点——getNextNode操作
 
-getNextNode操作是线索树两种基本操作之一，getNextNode操作的功能是：
+getNextNode操作是线索树四种基本操作之一，getNextNode操作的功能是：
 
 + 输入一个线索树中的结点，返回输入结点在中序遍历中的后继结点
 
@@ -189,6 +189,38 @@ ThreadNode *ThreadTree::getNextNode(ThreadNode *pos)
 ```
 
 ### 3.3 获取中序遍历最后一个结点——getLastNode操作
+getLastNode操作是线索树四种基本操作之一，getLastNode操作的功能是：
+
++ 输入一个线索树的根结点，返回该线索树的中序遍历的最后一个结点
+
+实现getLastNode操作的思想非常简单，因为中序遍历的最后一个结点必定是整个二叉树中最右侧的结点，因此只需要从输入的根结点开始，一路沿着右子结点的方向移动到最末端的结点，该末端结点就是整个二叉树中最右侧的结点，直接返回该结点即可。
+
+因此，getLastNode的具体算法步骤简要描述为: 
+
++ 初始化游标指针now指向输入的线索树的根结点，然后循环向右子结点的方向移动游标指针now: now=now->right，直到当前结点now没有右子结点，即now->rflag==1时退出循环，最后直接返回结点now
+
+具体代码实现样例如下: 
+```
+/*
+ * getLastNode: 线索树基本操作3: 获取给定的线索树中序遍历序列中的最后一个结点
+ * param root: 输入的给定线索树的根结点 
+ * return: 给定的线索树的中序遍历的最后一个结点
+ * note: 给定一个线索树，其中序遍历的最后一个结点必然是整个线索树中最右侧的结点，因此一直沿着右子结点的方向直到整个树最右侧的结点，返回该结点即可 
+*/
+ThreadNode *ThreadTree::getLastNode(ThreadNode *root)
+{
+	ThreadNode *now=root;	
+	
+	while(now&&!now->rflag)
+	{
+		now=now->right;
+	}
+	
+	return now;
+}   
+```
+
+
 
 ### 3.4 获取中序遍历的前驱结点——getPrevNode操作
 
