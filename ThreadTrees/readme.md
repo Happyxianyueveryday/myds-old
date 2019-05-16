@@ -188,3 +188,53 @@ ThreadNode *ThreadTree::getNextNode(ThreadNode *pos)
 }
 ```
 
+## 4. 线索树的中序遍历
+
+线索树的中序遍历算法非常简单，借助于上面介绍的线索树的两种基本操作——getFirstNode和getNextNode即可实现，算法步骤简述为: 
+
++ 首先使用getFirstNode方法获取整个线索树中序遍历的首结点，然后不断使用getNextNode方法获取中序遍历中的后继结点，直到遇到空结点NULL为止 
+
+具体代码实现样例如下:
+
+```
+/* 
+ * inorder: 对当前的线索树进行中序遍历，返回中序遍历结果
+ * note: 本算法直接使用上述的线索树的两种基本操作进行完成，首先使用getFirstNode方法获取整个线索树中序遍历的首结点，然后不断使用getNextNode方法获取中序遍历中的后继结点，直到遇到空结点NULL为止 
+*/
+vector<int> ThreadTree::inorder()
+{
+	vector<int> res;
+	
+	ThreadNode *now=getFirstNode(treeroot);
+	
+	while(now)
+	{
+		res.push_back(now->val);
+		now=getNextNode(now);
+	}
+	
+	return res;
+}
+
+```
+
+## 5. 线索树的析构
+
+```
+/*
+ * ~ThreadTree: 析构函数 
+ * note: 同样可以按照中序遍历的顺序来进行析构，使用getFirstNode和getNextNode两个方法进行遍历的同时进行删除即可 
+*/
+ThreadTree::~ThreadTree()
+{
+	ThreadNode *now=getFirstNode(treeroot);
+	
+	while(now)
+	{
+		ThreadNode *temp=now;
+		now=getNextNode(now);
+		delete now;
+	} 
+}
+```
+
