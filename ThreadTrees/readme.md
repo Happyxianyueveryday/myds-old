@@ -32,10 +32,10 @@
 > 1. 创建一个临时栈，创建临时变量nowprev指向当前访问结点的前驱结点，初始化nowprev=NULL
 > 2. 从根结点开始一直向左子结点方向遍历直到遇到空结点为止，将途经的结点依次加入栈中
 > 3. 循环进行以下步骤直到栈为空为止: 
->> (1) 初始化结点指针now指向栈顶结点，now就是当前正在访问和处理的结点
->> (2) 从now->right开始，一直向左子结点方向遍历直到遇到空结点为止，将途经的结点依次加入栈中
->> (3) 正式进行线索化: 若now->left==NULL，则令left指向中序遍历的前驱结点: now->left=nowprev; now->lflag=1；若now->right==NULL，则令right指向中序遍历的后继结点（当前结点的后继结点就是当前的栈顶结点，若栈为空则设为NULL）: now->right=sta.size()?sta.top():NULL; now->rflag=1。
->> (4) 更新临时变量nowprev: nowprev=now
+>> (1) 初始化结点指针now指向栈顶结点，now就是当前正在访问和处理的结点   
+>> (2) 从now->right开始，一直向左子结点方向遍历直到遇到空结点为止，将途经的结点依次加入栈中  
+>> (3) 正式进行线索化: 若now->left==NULL，则令left指向中序遍历的前驱结点: now->left=nowprev; now->lflag=1；若now->right==NULL，则令right指向中序遍历的后继结点（当前结点的后继结点就是当前的栈顶结点，若栈为空则设为NULL）: now->right=sta.size()?sta.top():NULL; now->rflag=1  
+>> (4) 更新临时变量nowprev: nowprev=now  
 
 具体代码实现样例如下:
 
@@ -117,5 +117,7 @@ ThreadNode *ThreadTree::__copyTree(TreeNode *root)
 
 ## 3. 线索树的两种基本操作
 #### 3.1. 获取中序遍历首结点——getFirstNode操作
+
+
 
 #### 3.2 获取中序遍历下一个结点——getNextNode操作
