@@ -40,7 +40,7 @@ leetcode 链接: https://leetcode-cn.com/problems/simplify-path/
 leetcode 链接: https://leetcode-cn.com/problems/add-two-numbers/
 ```
 
-#### 2. reverseList: 反转链表 （计划于5月16日完成）
+#### 2. reverseList: 反转链表（两种基本的反转算法均要掌握） （计划于5月16日完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/reverse-linked-list/
 ```
