@@ -224,6 +224,42 @@ ThreadNode *ThreadTree::getLastNode(ThreadNode *root)
 
 ### 3.4 获取中序遍历的前驱结点——getPrevNode操作
 
+getPrevNode操作是线索树四种基本操作之一，getPrevNode操作的功能是：
+
++ 输入一个线索树中的结点，返回输入结点在中序遍历中的前驱结点
+
+根据线索树的定义，假设输入的结点为pos，不难看出如下事实: 
+
++ 当输入的结点pos的lflag字段为1，即pos->lflag==1时，这时根据线索树的定义，pos->left就指向当前结点在中序遍历中的前驱结点，因此沿着pos->left一定能访问到当前结点pos的前驱结点，故直接返回pos->left
+
++ 当输入的结点pos的lflag字段为0，即pos->lflag==0时，这时说明当前结点pos存在左子树，回顾一下中序遍历的定义，在访问当前结点pos之前，应当首先访问完当前结点pos的左子树，因此，当前结点pos在中序遍历中前驱结点就是左子树pos->left放入中序遍历序列中的最后一个结点（注意结合中序遍历的过程进行理解），左子树的最后一个结点可以通过getLastNode操作实现，故直接返回getLastNode(pos->left)
+
+因此可以总结出getPrevNode操作实现的算法步骤: 
+
++ 如果输入结点pos的lflag字段为1，即pos->lflag==1，直接返回pos->left
++ 如果输入结点pos的rflag字段为0，即pos->lflag==0，直接返回getLastNode(root->left)
+
+具体的代码实现如下:
+
+```
+/*
+ * getPrevNode: 线索树基本操作4：获取在中序遍历中当前结点的上一个结点
+ * param pos: 输入的线索树结点 
+ * return: 给定的结点在中序遍历中的上一个结点 
+ * note: 给定一个线索树中的某个结点，要获得该结点在中序遍历中的上一个结点，站在中序遍历的角度上思考，其思路非常简单：
+ *       (1) 若输入结点pos的lflag==1，根据二叉线索树结点的定义，这时沿着left必定能够达到后继结点，故直接返回pos->left；
+ *       (2) 若输入结点pos的lflag==0，这时当前结点存在左子树，因为当前结点pos已经输出，因此中序遍历中的前驱结点是当前结点的左子树pos->left中的中序遍历的最后一个结点，故直接返回getLastNode(pos->left)
+*/          
+ThreadNode *ThreadTree::getPrevNode(ThreadNode *pos)
+{
+	if(pos->lflag)	
+	return pos->left;
+	else
+	return getLastNode(pos->left);
+}
+```
+
+
 ## 4. 线索树的中序遍历
 
 线索树的中序遍历算法非常简单，借助于上面介绍的线索树的两种基本操作——getFirstNode和getNextNode即可实现，算法步骤简述为: 
@@ -254,7 +290,11 @@ vector<int> ThreadTree::inorder()
 
 ```
 
-## 5. 线索树的析构
+## 5. 线索树的反向中序遍历
+
+
+
+## 6. 线索树的析构
 
 线索树的析构算法既可以使用普通二叉树的析构方法，也可以利用线索树的特殊性质，借助于上面介绍的线索树的两种基本操作——getFirstNode和getNextNode即可实现，算法步骤简述为:
 
