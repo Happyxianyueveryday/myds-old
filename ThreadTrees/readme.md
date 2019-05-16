@@ -118,6 +118,73 @@ ThreadNode *ThreadTree::__copyTree(TreeNode *root)
 ## 3. 线索树的两种基本操作
 #### 3.1. 获取中序遍历首结点——getFirstNode操作
 
+getFirstNode操作是线索树两种基本操作之一，getFirstNode操作的功能是：
 
++ 输入一个线索树的根结点，返回该线索树的中序遍历的首结点
+
+实现getFirstNode操作的思想非常简单，因为一个树在中序遍历时，输出的首结点一定是整个树中最左侧的结点，因此从根结点开始一路向左子结点的方向移动到最末端的结点，返回该结点即可。
+
+因此，getFirstNode操作的具体算法步骤简要总结为:  
+
++ 初始化游标指针now指向输入的线索树的根结点: now=root，接着循环向左子结点的方向移动: now=now->left，直到当前结点now没有左子结点，即now->lflag==1时退出循环，返回结点now
+
+具体代码实现样例如下:
+
+```
+/*
+ * getFirstNode: 线索树基本操作1: 获取给定的线索树中序遍历序列中的第一个结点，该操作的算法思想（见note）非常重要，务必非常熟练地理解和掌握 
+ * param root: 输入的给定线索树的根结点 
+ * return: 给定的线索树的中序遍历的首结点 
+ * note: 给定一个线索树，其中序遍历的首结点必然是最左侧的结点，因此一直沿着左子结点的方向直到整个树最左侧的结点，返回该结点即可 
+*/
+ThreadNode *ThreadTree::getFirstNode(ThreadNode *root)
+{
+	// 1. 初始化游标指针now指向输入的线索树的根结点 
+	ThreadNode *now=root;
+	
+	// 2. 移动游标指针now到线索树最左侧的结点: 直接从根结点开始一直向左移动到最后一个结点即可，判断最后一个结点只需根据标志变量lflag即可 
+	while(now&&!now->lflag)   // lflag==1表明当前结点没有左子结点，这时当前结点就是最左侧的结点，直接退出循环并返回即可 
+	{
+		now=now->left;
+	}
+	
+	return now;
+}
+```
 
 #### 3.2 获取中序遍历下一个结点——getNextNode操作
+
+getNextNode操作是线索树两种基本操作之一，getNextNode操作的功能是：
+
++ 输入一个线索树中的结点，返回输入结点在中序遍历中的后继结点
+
+根据线索树的定义，不难看出如下事实: 
+
++ 如果输入结点pos的rflag字段为1，即pos->rflag==1，这时根据线索树的定义，pos->right就一定指向中序遍历的下一个结点，只要沿着pos->right就一定能到达中序遍历的后继结点，因此直接返回pos->right作为结果。
++ 如果输入结点pos的rflag字段为0，即pos->rflag==0，这时由于输入的结点pos已经访问过（隐含说明pos的左子树在pos之前也已经访问过），因此根据中序遍历的递归定义，接下来就要访问结点pos的右子树，因此中序遍历的后继结点就是输入结点pos的右子树pos->right的中序遍历首结点，因此返回getFirstNode(pos->right)作为结果。
+
+因此，getNextNode操作的具体算法步骤简要总结为:  
+
++ 
++ 
+
+具体代码实现样例如下:
+
+```
+/*
+ * getNextNode: 线索树基本操作2: 获取在中序遍历中当前结点的下一个结点，该操作的算法思想（见note）非常重要，务必非常熟练地理解和掌握 
+ * param pos: 输入的线索树结点 
+ * return: 给定的结点在中序遍历中的下一个结点 
+ * note: 给定一个线索树中的某个结点，要获得该结点在中序遍历中的下一个结点，站在中序遍历的角度上思考，其思路非常简单：
+ *       (1) 若输入结点pos的rflag==1，根据二叉线索树结点的定义，这时沿着right必定能够达到后继结点，故直接返回pos->right；
+ *       (2) 若输入结点pos的rflag==0，这时当前结点存在右子树，因为当前结点pos已经输出，因此中序遍历中的后继结点是当前结点的右子树pos->right中的中序遍历首结点，故直接返回getFirstNode(pos->right) （为什么不用处理左子树？因为左子树由getFirstNode方法处理了，可以使用一个示例来附辅助理解） 
+*/          
+ThreadNode *ThreadTree::getNextNode(ThreadNode *pos)
+{
+	if(pos->rflag)	
+	return pos->right;
+	else
+	return getFirstNode(pos->right);
+}
+```
+
