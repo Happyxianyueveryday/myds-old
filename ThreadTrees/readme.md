@@ -115,8 +115,8 @@ ThreadNode *ThreadTree::__copyTree(TreeNode *root)
 }
 ```
 
-## 3. 线索树的两种基本操作
-#### 3.1. 获取中序遍历首结点——getFirstNode操作
+## 3. 线索树的两种基本操作——getFirstNode和getNextNode
+### 3.1. 获取中序遍历首结点——getFirstNode操作
 
 getFirstNode操作是线索树两种基本操作之一，getFirstNode操作的功能是：
 
@@ -152,7 +152,7 @@ ThreadNode *ThreadTree::getFirstNode(ThreadNode *root)
 }
 ```
 
-#### 3.2 获取中序遍历下一个结点——getNextNode操作
+### 3.2 获取中序遍历下一个结点——getNextNode操作
 
 getNextNode操作是线索树两种基本操作之一，getNextNode操作的功能是：
 
@@ -165,8 +165,8 @@ getNextNode操作是线索树两种基本操作之一，getNextNode操作的功�
 
 因此，getNextNode操作的具体算法步骤简要总结为:  
 
-+ 
-+ 
++ 如果输入结点pos的rflag字段为1，即pos->rflag==1，返回pos->right作为结果
++ 如果输入结点pos的rflag字段为0，即pos->rflag==0，返回getFirstNode(root->right)作为结果
 
 具体代码实现样例如下:
 
