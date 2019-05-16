@@ -264,7 +264,7 @@ ThreadNode *ThreadTree::getPrevNode(ThreadNode *pos)
 
 线索树的中序遍历算法非常简单，借助于上面介绍的线索树的两种基本操作——getFirstNode和getNextNode即可实现，算法步骤简述为: 
 
-+ 首先使用getFirstNode方法获取整个线索树中序遍历的首结点，然后不断使用getNextNode方法获取中序遍历中的后继结点，直到遇到空结点NULL为止 
++ 首先使用getFirstNode方法获取整个线索树中序遍历的首结点，然后不断使用getNextNode方法获取当前结点在中序遍历中的后继结点，直到遇到空结点NULL为止 
 
 具体代码实现样例如下:
 
@@ -292,6 +292,32 @@ vector<int> ThreadTree::inorder()
 
 ## 5. 线索树的反向中序遍历
 
+线索树的反向中序遍历实现和中序遍历类似，只需使用线索树的getLastNode操作和getPrevNode操作即可完成，算法步骤简述为: 
+
++ 首先使用getLastNode方法获取整个线索树中序遍历的最后一个结点，然后不断使用getPrevNode方法获取当前结点在中序遍历中的前驱结点，直到遇到空结点NULL为止 
+
+具体代码实现样例如下:
+
+```
+/* 
+ * inverse_inorder: 对当前的线索树进行反向中序遍历
+ * note: 本算法直接使用上述的线索树的两种基本操作进行完成，首先使用getLastNode方法获取整个线索树中序遍历的最后一个结点，然后不断使用getPrevNode方法获取中序遍历中的前驱结点，直到遇到空结点NULL为止
+*/
+vector<int> ThreadTree::inverse_inorder()  
+{
+	vector<int> res;
+	
+	ThreadNode *now=getLastNode(treeroot);
+	
+	while(now)
+	{
+		res.push_back(now->val);
+		now=getPrevNode(now);
+	}
+	
+	return res;
+}
+```
 
 
 ## 6. 线索树的析构
@@ -300,6 +326,7 @@ vector<int> ThreadTree::inorder()
 
 + 首先使用getFirstNode方法获取整个线索树中序遍历的首结点，释放当前结点，然后使用getNextNode方法获取中序遍历中的后继结点，直到遇到空结点NULL为止
 
+具体代码实现样例如下:
 ```
 /*
  * ~ThreadTree: 析构函数 
