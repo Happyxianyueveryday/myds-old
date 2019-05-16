@@ -35,22 +35,22 @@ leetcode 链接: https://leetcode-cn.com/problems/simplify-path/
 ```
 
 ## 链表专题
-#### 1. addTwoNumbers: 将链表表示的两个整数相加 （计划于5月16日完成）
+#### 1. addTwoNumbers: 将链表表示的两个整数相加 （5月16日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/add-two-numbers/
 ```
 
-#### 2. reverseList: 反转链表（两种基本的反转算法均要掌握） （计划于5月16日完成）
+#### 2. reverseList: 反转链表（两种基本的反转算法均要掌握） （5月16日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/reverse-linked-list/
 ```
 
-#### 3. middleNode: 查找链表的中间结点 （计划于5月16日完成）
+#### 3. middleNode: 查找链表的中间结点 （5月16日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/middle-of-the-linked-list/
 ```
 
-#### 4. removeNthFromEnd: 查找和删除链表的倒数第n个结点（计划于5月16日完成）
+#### 4. removeNthFromEnd: 查找和删除链表的倒数第n个结点（5月16日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 ```
