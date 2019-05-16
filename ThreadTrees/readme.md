@@ -220,6 +220,10 @@ vector<int> ThreadTree::inorder()
 
 ## 5. 线索树的析构
 
+线索树的析构算法既可以使用普通二叉树的析构方法，也可以利用线索树的特殊性质，借助于上面介绍的线索树的两种基本操作——getFirstNode和getNextNode即可实现，算法步骤简述为:
+
++ 首先使用getFirstNode方法获取整个线索树中序遍历的首结点，释放当前结点，然后使用getNextNode方法获取中序遍历中的后继结点，直到遇到空结点NULL为止
+
 ```
 /*
  * ~ThreadTree: 析构函数 
