@@ -21,10 +21,10 @@
 
 ### 扩展部分
 #### 1. ThreadTrees: 线索树（5月15日已完成，readme文档也已完成）
-#### 2. BPlusTree: B+树 
-#### 3. AVLTree: AVL树
+#### 2. BPlusTree: B+树 （预定于5月18日完成）
+#### 3. AVLTree: AVL树 
 #### 4. BRTree: 红黑树
-#### 5. Hash: 哈希表 （预定于5月16日完成）
+#### 5. Hash: 哈希表 
 #### 6. StrAlgorithm: 字符串算法（KMP,Manacher等）  
 
 
