@@ -55,7 +55,7 @@ leetcode 链接: https://leetcode-cn.com/problems/middle-of-the-linked-list/
 leetcode 链接: https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 ```
 
-#### 5. hasCycle: 判断链表是否存在环 （计划于5月16日完成）
+#### 5. hasCycle: 判断链表是否存在环（5月16日已完成）
 ```
 leetcode 链接: https://leetcode-cn.com/problems/linked-list-cycle/
 ```
@@ -65,17 +65,17 @@ leetcode 链接: https://leetcode-cn.com/problems/linked-list-cycle/
 leetcode链接: https://leetcode-cn.com/problems/linked-list-cycle-ii/
 ```
 
-#### 7. getIntersectionNode: 判断两个链表是否相交并查找相交结点 
+#### 7. getIntersectionNode: 判断两个链表是否相交并查找相交结点（5月16日已完成） 
 ```
 leetcode链接: https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
 ```
 
-#### 8. insertionSortList: 对链表进行插入排序 
+#### 8. insertionSortList: 对链表进行插入排序（5月16日已完成）
 ```
 leetcode链接: https://leetcode-cn.com/problems/insertion-sort-list/
 ```
 
-#### 9. sortList: 对链表进行快速排序和归并排序
+#### 9. sortList: 对链表进行快速排序和归并排序（5月16日已完成）
 ```
 leetcode链接: https://leetcode-cn.com/problems/sort-list/
 ```
