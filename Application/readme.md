@@ -2,7 +2,7 @@
 
 ## 目录（随时间长期更新）
 
-### 栈专题
+### 栈专题 （5月12日已完结）
 
 #### 1. PMatches: 用栈进行括号匹配 
 ```
@@ -44,7 +44,7 @@ leetcode链接: https://leetcode-cn.com/problems/validate-stack-sequences/
 leetcode链接: https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/
 ```
 
-## 链表专题 （5月17日已完结）
+### 链表专题 （5月17日已完结）
 #### 1. addTwoNumbers: 将链表表示的两个整数相加 
 ```
 leetcode 链接: https://leetcode-cn.com/problems/add-two-numbers/
@@ -90,7 +90,7 @@ leetcode链接: https://leetcode-cn.com/problems/insertion-sort-list/
 leetcode链接: https://leetcode-cn.com/problems/sort-list/
 ```
 
-## 树专题 （计划于5月18日完结）
+### 树专题 （计划于5月19日完结）
 
 #### 1. inorderTraversal: 二叉树的中序遍历
 ```
