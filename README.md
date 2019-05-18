@@ -21,11 +21,17 @@
 
 ### 扩展部分
 #### 1. ThreadTrees: 线索树（5月15日已完成，readme文档也已完成）
-#### 2. BPlusTree: B+树 （预定于5月18日完成）
+#### 2. BPlusTree: B+树 
 #### 3. AVLTree: AVL树 
 #### 4. BRTree: 红黑树
 #### 5. Hash: 哈希表 
 #### 6. StrAlgorithm: 字符串算法（KMP,Manacher等）  
+
+### 过气和落后的数据结构实现版本
+本部分属于考研内容，但现实中基本不用，也不具有任何的实用价值的数据结构实现
+#### 1. ArrayStack: 栈的数组实现 （5月18日已完成）
+#### 2. ArrayQueue: 队列的数组实现 
+#### 3. CycleQueue: 循环数组队列实现
 
 
 ### 数据结构leetcode习题精选
