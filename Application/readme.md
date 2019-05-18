@@ -39,6 +39,11 @@ leetcode 链接: https://leetcode-cn.com/problems/simplify-path/
 leetcode链接: https://leetcode-cn.com/problems/validate-stack-sequences/
 ```
 
+#### 8. isValidSerialization: 利用栈验证二叉树的前序遍历序列
+```
+leetcode链接: https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/
+```
+
 ## 链表专题 （5月17日已完结）
 #### 1. addTwoNumbers: 将链表表示的两个整数相加 
 ```
