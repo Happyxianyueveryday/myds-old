@@ -1,5 +1,7 @@
 # 数据结构相关的leetcode习题精选
 
+本部分目前已经转移到另外一个项目下进行更新。 https://github.com/Happyxianyueveryday/leetcode-notebook
+
 ## 目录（随时间长期更新）
 
 ### 栈专题 （5月12日已完结）
