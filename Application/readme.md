@@ -106,3 +106,20 @@ leetcode链接: https://leetcode-cn.com/problems/unique-binary-search-trees-ii/
 ```
 leetcode链接: https://leetcode-cn.com/problems/unique-binary-search-trees/
 ```
+
+#### 4. isValidBST: 验证二叉搜索树
+```
+leetcode链接: https://leetcode-cn.com/problems/validate-binary-search-tree/
+```
+
+#### 5. isSameTree:相同的树
+```
+leetcode链接: https://leetcode-cn.com/problems/same-tree/
+```
+
+#### 6. isSymmetric: 对称二叉树
+```
+leetcode链接: https://leetcode-cn.com/problems/symmetric-tree/
+```
+
+#### 7. 
