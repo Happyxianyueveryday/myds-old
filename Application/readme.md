@@ -97,7 +97,7 @@ leetcode链接: https://leetcode-cn.com/problems/sort-list/
 leetcode链接: https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
 ```
 
-#### 2. generateTrees: 不同的二叉搜索树 II
+从中序与后序遍历序列构造二叉树#### 2. generateTrees: 不同的二叉搜索树 II
 ```
 leetcode链接: https://leetcode-cn.com/problems/unique-binary-search-trees-ii/
 ```
@@ -122,4 +122,37 @@ leetcode链接: https://leetcode-cn.com/problems/same-tree/
 leetcode链接: https://leetcode-cn.com/problems/symmetric-tree/
 ```
 
-#### 7. 
+#### 7. isBalanced：判断给定树是否为平衡二叉树
+```
+leetcode链接: https://leetcode-cn.com/problems/balanced-binary-tree/
+```
+
+#### 8. sortedArrayToBST: 将有序数组转化为平衡二叉树
+```
+https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/sortedArrayToBST: 
+```
+
+#### 9. levelOrderBottom: 二叉树的层次遍历
+```
+leetcode链接: https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
+```
+
+#### 10. buildTree1: 从中序与后序遍历序列构造二叉树
+```
+leetcode链接: https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+```
+
+#### 11. buildTree2: 从前序与中序遍历序列构造二叉树
+```
+leetcode链接: https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+```
+
+#### 12. maxDepth: 二叉树的最大深度
+```
+leetcode链接: https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+```
+
+#### 13. zigzagLevelOrder: 二叉树的zigzag遍历
+```
+leetcode链接: https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+```
