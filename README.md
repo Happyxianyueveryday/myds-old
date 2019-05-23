@@ -34,12 +34,6 @@
 #### 3. CycleQueue: 循环数组队列实现 （5月18日已完成）
 #### 4. ArrayList: 链表的数组实现 
 
-
-### Part D. 数据结构leetcode习题精选
-
-该部分统一见Application文件夹下的相关专题。
-#### 1. Application: 数据结构相关的leetcode习题精选
-
 ### 附件：Java版本实现
 #### 1. Java: 数据结构的Java实现版本：目前已经完成链表，排序和哈希表部分
  
