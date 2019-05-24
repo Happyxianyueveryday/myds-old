@@ -22,11 +22,11 @@
 ### Part B. 扩展部分
 #### 1. ThreadTrees: 线索树（5月15日已完成）
 #### 2. UnionSet: 并查集（预定于5月24日完成）
-#### 3. BTree: B树
+#### 3. BTree: B树 
 #### 4. BPlusTree: B+树 
 #### 5. AVLTree: AVL树 
 #### 6. BRTree: 红黑树 
-#### 7. Hash: 哈希表 （5月23日已完成java版本，见Java文件夹下的相关内容）
+#### 7. Hash: 哈希表 （5月23日已完成）
 #### 8. StrAlgorithm: 字符串算法（KMP,Manacher等）  
 #### 9. HuffmanTree: 哈夫曼树（预定于5月24日完成）
 
