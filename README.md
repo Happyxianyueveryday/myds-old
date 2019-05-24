@@ -21,14 +21,14 @@
 
 ### Part B. 扩展部分
 #### 1. ThreadTrees: 线索树（5月15日已完成）
-#### 2. UnionSet: 并查集（预定于5月24日完成）
+#### 2. UnionSet: 并查集（预定于5月25日完成）
 #### 3. BTree: B树 
 #### 4. BPlusTree: B+树 
 #### 5. AVLTree: AVL树 
 #### 6. BRTree: 红黑树 
 #### 7. Hash: 哈希表 （5月23日已完成）
 #### 8. StrAlgorithm: 字符串算法（KMP,Manacher等）  
-#### 9. HuffmanTree: 哈夫曼树（预定于5月24日完成）
+#### 9. HuffmanTree: 哈夫曼树（5月24日已完成）
 
 ### Part C. 数据结构不常见的实现版本
 本部分包含部分属于考研内容，但实际生产中不常见的数据结构实现方式。
