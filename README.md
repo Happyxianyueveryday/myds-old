@@ -21,7 +21,7 @@
 
 ### Part B. 扩展部分
 #### 1. ThreadTrees: 线索树（5月15日已完成）
-#### 2. UnionSet: 并查集（预定于5月25日完成）
+#### 2. UnionSet: 并查集（5月25日已完成）
 #### 3. BTree: B树 
 #### 4. BPlusTree: B+树 
 #### 5. AVLTree: AVL树 
