@@ -20,15 +20,17 @@
 #### 8. Search: 查找 （5月11日已完成）
 
 ### Part B. 扩展部分
-#### 1. ThreadTrees: 线索树系列（包括中序，前序，后序三种线索树）（5月26日已更新）
-#### 2. UnionSet: 并查集
-#### 3. BTree: B树 
-#### 4. BPlusTree: B+树 
-#### 5. AVLTree: AVL树 （5月25日已完成）
-#### 6. BRTree: 红黑树 
-#### 7. Hash: 哈希表 （5月23日已完成）
-#### 8. StrAlgorithm: 字符串算法（KMP,Manacher等）  
-#### 9. HuffmanTree: 哈夫曼树（5月24日已完成）
+#### 1. ThreadTrees: 中序线索树（5月15日已完成）
+#### 2. ThreadPreTrees: 前序线索树（5月26日已完成）
+#### 3. ThreadPostTrees: 后序线索树（5月26日已完成）
+#### 4. UnionSet: 并查集
+#### 5. BTree: B树 
+#### 6. BPlusTree: B+树 
+#### 7. AVLTree: AVL树 （5月26日已完成）
+#### 8. BRTree: 红黑树 
+#### 9. Hash: 哈希表 （5月23日已完成）
+#### 10. StrAlgorithm: 串算法（KMP,Manacher等）  
+#### 11. HuffmanTree: 哈夫曼树（5月24日已完成）
 
 ### Part C. 数据结构不常见的实现版本
 本部分包含部分属于考研内容，但实际生产中不常见的数据结构实现方式。
@@ -38,5 +40,5 @@
 #### 4. ArrayList: 链表的数组实现 
 
 ### 附件：Java版本实现
-#### 1. Java: 数据结构的Java实现版本：目前已经完成链表，排序和哈希表部分
+#### 1. Java: 数据结构的Java实现版本：目前已经完成链表，排序，查找和哈希表部分
  
