@@ -20,7 +20,7 @@
 #### 8. Search: 查找 （5月11日已完成）
 
 ### Part B. 扩展部分
-#### 1. ThreadTrees: 线索树（5月15日已完成）
+#### 1. ThreadTrees: 线索树系列（包括中序，前序，后序三种线索树）（5月26日已更新）
 #### 2. UnionSet: 并查集
 #### 3. BTree: B树 
 #### 4. BPlusTree: B+树 
