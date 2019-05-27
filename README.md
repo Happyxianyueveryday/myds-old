@@ -24,9 +24,9 @@
 #### 2. ThreadPreTrees: 前序线索树（5月26日已完成）
 #### 3. ThreadPostTrees: 后序线索树（5月26日已完成）
 #### 4. UnionSet: 并查集
-#### 5. BTree: B树 
-#### 6. BPlusTree: B+树 
-#### 7. AVLTree: AVL树 （5月26日已完成）
+#### 5. BTree: B树 （重难点，正在写）
+#### 6. BPlusTree: B+树
+#### 7. AVLTree: AVL树 
 #### 8. BRTree: 红黑树 
 #### 9. Hash: 哈希表 （5月23日已完成）
 #### 10. StrAlgorithm: 串算法（KMP,Manacher等）  
@@ -37,7 +37,7 @@
 #### 1. ArrayStack: 栈的数组实现 （5月18日已完成）
 #### 2. ArrayQueue: 队列的数组实现 （5月18日已完成）
 #### 3. CycleQueue: 循环数组队列实现 （5月18日已完成）
-#### 4. ArrayList: 链表的数组实现（5月26日已完成）
+#### 4. ArrayList: 链表的数组实现
 
 ### 附件：Java版本实现
 #### 1. Java: 数据结构的Java实现版本：目前已经完成链表，排序，查找和哈希表部分
