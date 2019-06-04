@@ -17,8 +17,9 @@
 #### 5. Queue: 队列 √
 #### 6. Graph: 无向图 √
 #### 7. DAG: 有向无环图 √ 
-#### 8. Sort: 排序 √
-#### 9. Search: 查找 √ 
+#### 8. AOE: AOE网 
+#### 9. Sort: 排序 √
+#### 10. Search: 查找 √ 
 
 ### Part B. 中级数据结构
 #### 1. ThreadTrees: 中序线索树 √ 
