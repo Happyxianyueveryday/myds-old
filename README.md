@@ -10,23 +10,23 @@
 
 ## 目录（随时间更新）
 ### Part A. 基础数据结构
-#### 1. Linked-list: 单向链表（5月1日已完成）
+#### 1. Linked-list: 单向链表 √
 #### 2. Louble-list: 双向链表 
-#### 3. Tree: 二叉搜索树（5月2日已完成）
-#### 4. Stack: 栈（5月2日已完成）
-#### 5. Queue: 队列（5月10日已完成）
-#### 6. Graph: 无向图（5月4日已完成）
-#### 7. DiGraph: 有向图（6月3日已完成）
-#### 8. Sort: 排序（5月7日已完成）
-#### 9. Search: 查找（5月11日已完成）
+#### 3. Tree: 二叉搜索树 √
+#### 4. Stack: 栈 √
+#### 5. Queue: 队列 √
+#### 6. Graph: 无向图 √
+#### 7. DAG: 有向无环图 √ 
+#### 8. Sort: 排序 √
+#### 9. Search: 查找 √ 
 
 ### Part B. 中级数据结构
-#### 1. ThreadTrees: 中序线索树（5月15日已完成）
-#### 2. ThreadPreTrees: 前序线索树（5月26日已完成）
-#### 3. ThreadPostTrees: 后序线索树（5月26日已完成）
-#### 4. Hash: 哈希表（5月23日已完成）
-#### 5. UnionSet: 并查集（5月29日已完成）
-#### 6. HuffmanTree: 哈夫曼树（5月24日已完成）
+#### 1. ThreadTrees: 中序线索树 √ 
+#### 2. ThreadPreTrees: 前序线索树 √ 
+#### 3. ThreadPostTrees: 后序线索树 √ 
+#### 4. Hash: 哈希表 √ 
+#### 5. UnionSet: 并查集 √ 
+#### 6. HuffmanTree: 哈夫曼树 √ 
 #### 7. AVLTree: AVL树 
 #### 8. PriorQueue: 优先队列
 #### 9. BTree: B树 
@@ -39,10 +39,10 @@
 
 ### Part D. 数据结构不常见的实现版本
 本部分包含部分属于考研内容，但实际生产中不常见的数据结构实现方式。
-#### 1. ArrayStack: 栈的数组实现（5月18日已完成）
-#### 2. ArrayQueue: 队列的数组实现（5月18日已完成）
-#### 3. CycleQueue: 循环数组队列实现（5月18日已完成）
-#### 4. ArrayList: 链表的数组实现（5月28日已完成）
+#### 1. ArrayStack: 栈的数组实现 √ 
+#### 2. ArrayQueue: 队列的数组实现 √ 
+#### 3. CycleQueue: 循环数组队列实现 √ 
+#### 4. ArrayList: 链表的数组实现 √ 
 
 ### Part E. Java版本实现
 #### 1. Java: 数据结构的Java实现版本：目前已经完成一部分
