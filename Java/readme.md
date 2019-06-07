@@ -10,5 +10,5 @@
 #### 7. DAG: 有向无环图 √
 #### 8. AOE: AOE网 √
 #### 9. ThreadTree: 中序线索树 √
-#### 10. ThreadPreTree： 前序线索树
-#### 11. 
+#### 10. ThreadPreTree: 前序线索树
+#### 11. ArrayList: 静态链表
