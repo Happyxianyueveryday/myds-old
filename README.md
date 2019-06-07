@@ -43,7 +43,7 @@
 #### 1. ArrayStack: 栈的数组实现 √ 
 #### 2. ArrayQueue: 队列的数组实现 √ 
 #### 3. CycleQueue: 循环数组队列实现 √ 
-#### 4. ArrayList: 链表的数组实现 √ 
+#### 4. ArrayList: 静态链表 √ 
 
 ### Part E. Java版本实现（二轮复习）
 #### 1. Java: 数据结构的Java实现版本：目前已经完成一部分
