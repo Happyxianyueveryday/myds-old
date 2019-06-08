@@ -9,7 +9,9 @@
 #### 6. Graph: 无向图 √
 #### 7. DAG: 有向无环图 √
 #### 8. AOE: AOE网 √
-#### 9. ThreadTree: 中序线索树 √
-#### 10. ThreadPreTree: 前序线索树
-#### 11. ArrayList: 静态链表 √
-#### 12. PriorQueue: 优先队列（堆） √
+#### 9. GraphAlgorithm: 扩展的通用图论算法 √
+#### 10. ThreadTree: 中序线索树 √
+#### 11. ThreadPreTree: 前序线索树
+#### 12. PriorQueue: 优先队列（堆） 
+#### 13. ArrayList: 静态链表 √
+#### 14. ArrayQueue: 静态队列 √
