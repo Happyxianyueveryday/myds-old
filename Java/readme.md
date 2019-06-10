@@ -9,7 +9,7 @@
 #### 6. Graph: 无向图 √
 #### 7. DAG: 有向无环图 √
 #### 8. AOE: AOE网 √
-#### 9. GraphAlgorithm: 扩展的通用图论算法 （未完成，更新中）
+#### 9. GraphAlgorithm: 图的环和连通性相关算法 √
 #### 10. ThreadTree: 中序线索树 √
 #### 11. ThreadPreTree: 前序线索树
 #### 12. PriorQueue: 优先队列（堆） 
