@@ -18,7 +18,7 @@
 #### 6. Graph: 无向图 （基础图论算法：dfs，bfs，最短路径，最小生成树）√
 #### 7. DAG: 有向无环图（拓扑排序） √ 
 #### 8. AOE: AOE网 （关键路径）√
-#### 9. GraphAlgorithm: 图的连通性相关算法 √
+#### 9. GraphAlgorithm: 图的连通性相关算法 （近期待更新）
 #### 10. Sort: 排序 √
 #### 11. Search: 查找 √ 
 
@@ -27,10 +27,10 @@
 #### 2. ThreadPreTrees: 前序线索树 √ 
 #### 3. ThreadPostTrees: 后序线索树 √ 
 #### 4. Hash: 哈希表 √ 
-#### 5. UnionSet: 并查集 √ 
+#### 5. UnionSet: 并查集 （近期决定重构实现，待更新）
 #### 6. HuffmanTree: 哈夫曼树 √ 
 #### 7. AVLTree: AVL树 
-#### 8. PriorQueue: 优先队列
+#### 8. PriorQueue: 优先队列（堆）
 #### 9. BTree: B树 
 #### 10. BPlusTree: B+树
 #### 11. StrAlgorithm: 串算法（KMP,Manacher等）  
