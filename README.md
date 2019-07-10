@@ -27,7 +27,7 @@
 #### 2. ThreadPreTrees: 前序线索树 √ 
 #### 3. ThreadPostTrees: 后序线索树 √ 
 #### 4. Hash: 哈希表 √ 
-#### 5. UnionSet: 并查集 （近期决定重构实现，待更新）
+#### 5. UnionSet: 并查集 
 #### 6. HuffmanTree: 哈夫曼树 √ 
 #### 7. AVLTree: AVL树 
 #### 8. PriorQueue: 优先队列（堆）
