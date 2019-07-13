@@ -26,14 +26,16 @@
 #### 1. ThreadTrees: 中序线索树 √ 
 #### 2. ThreadPreTrees: 前序线索树 √ 
 #### 3. ThreadPostTrees: 后序线索树 √ 
-#### 4. Hash: 哈希表 √ 
-#### 5. UnionSet: 并查集 
-#### 6. HuffmanTree: 哈夫曼树 √ 
-#### 7. AVLTree: AVL树 
-#### 8. PriorQueue: 优先队列（堆）
-#### 9. BTree: B树 
-#### 10. BPlusTree: B+树
-#### 11. StrAlgorithm: 串算法（KMP,Manacher等）  
+#### 4. MultiTree: 多叉树（基于孩子兄弟表示法）√
+#### 5. Forest: 多叉树森林 
+#### 6. Hash: 哈希表 √ 
+#### 7. UnionSet: 并查集 
+#### 8. HuffmanTree: 哈夫曼树 √ 
+#### 9. AVLTree: AVL树 
+#### 10. PriorQueue: 优先队列（堆）
+#### 11. BTree: B树 
+#### 12. BPlusTree: B+树
+#### 13. StrAlgorithm: 串算法（KMP,Manacher等）  
 
 ### Part C. 高级数据结构（选修）
 #### 1. BRTree: 红黑树 
