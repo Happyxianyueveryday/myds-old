@@ -34,10 +34,7 @@
 #### 12. BPlusTree: B+树
 #### 13. StrAlgorithm: 串算法（KMP,Manacher等）  
 
-### Part C. 高级数据结构（选）
-#### 1. BRTree: 红黑树 
-
-### Part D. 数据结构不常见的实现版本
+### Part C. 数据结构不常见的实现版本
 本部分包含部分属于考研内容，但实际生产中不常见的数据结构实现方式。
 #### 1. ArrayStack: 栈的数组实现 √ 
 #### 2. ArrayQueue: 队列的数组实现 √ 
@@ -45,6 +42,6 @@
 #### 4. ArrayList: 静态链表 √ 
 #### 5. SharedStack: 共享栈 √
 
-### Part E. Java版本实现（二轮复习）
+### Part D. Java版本实现
 #### 1. Java: 数据结构的Java实现版本：目前已经完成一部分
  
