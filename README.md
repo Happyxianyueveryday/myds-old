@@ -1,6 +1,6 @@
-# myds-non-template
+# myds-old
 
-(myds = my data-structure， non-template="非泛型化的")
+(myds = my data-structure)
 
 数据结构与算法一轮复习，手写实现非模板化的基本数据结构。
 
