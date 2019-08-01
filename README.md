@@ -1,8 +1,8 @@
-# myds
+# myds-non-template
 
-(myds = my data-structure)
+(myds = my data-structure， non-template="非泛型化的")
 
-数据结构与算法复习，基于C++或者java重新实现基本的数据结构与算法。从7月开始将致力于尽量完成对应的说明文档。
+数据结构与算法一轮复习，
 
 因为时间有限，单元测试写的不够完善，若发现实现上的错误，欢迎在issue区指正，非常感谢。
 
@@ -30,9 +30,6 @@
 #### 8. HuffmanTree: 哈夫曼树 √ 
 #### 9. AVLTree: AVL树 
 #### 10. PriorQueue: 优先队列（堆）
-#### 11. BTree: B树 
-#### 12. BPlusTree: B+树
-#### 13. StrAlgorithm: 串算法（KMP,Manacher等）  
 
 ### Part C. 数据结构不常见的实现版本
 本部分包含部分属于考研内容，但实际生产中不常见的数据结构实现方式。
